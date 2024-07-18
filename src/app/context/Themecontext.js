@@ -36,12 +36,9 @@ export function ThemeProvider({children}) {
     const Changered = ( color , bgcolor , bgbtn , bgcon , bginput ) => {
         dispatch({ type: 'REDCHANGE' , payload:color , payload:bgcolor , payload:bgbtn , payload:bginput , payload:bgcon})
     }
-    const Changegreen = ( color , bgcolor , bgbtn , bgcon , bginput ) => {
-        dispatch({ type: 'GREENCHANGE' , payload:color , payload:bgcolor , payload:bgbtn , payload:bginput , payload:bgcon})
-    }
 
     return(
-        <Themecontext.Provider value={{...state , Changeblue , Changered , Changegreen}}>
+        <Themecontext.Provider value={{...state , Changeblue , Changered }}>
             {children}
         </Themecontext.Provider>
     )

@@ -4,7 +4,7 @@ import { Themecontext } from "../context/Themecontext"
 
 function Calculator({ number , inputnum , setNumber , setInputnum , end }) {
 
-    const { bginput , Changegreen , color , bgcon , bgcolor , bgbtn , Changeblue , Changered } = useContext(Themecontext)
+    const { bginput , color , bgcon , bgcolor , bgbtn , Changeblue , Changered } = useContext(Themecontext)
 
     const [ url , setUrl ] = useState('')
     const [ test , setTest ] = useState(true)
@@ -31,17 +31,12 @@ function Calculator({ number , inputnum , setNumber , setInputnum , end }) {
             <div className="flex">
                     <div dir="rtl" className="show flex justify-end items-center bg-white py-3">
                         <img
-                            onClick={() =>Changegreen()}
-                            className="theme mx-1"
-                            src={url.src}
-                        />
-                        <img
-                            onClick={() => Changered()} // تابع Changered برای تصویر بعدی
+                            onClick={Changered} // تابع Changered برای تصویر بعدی
                             className="theme mx-1"
                             src={url.src2}
                         />
                         <img
-                            onClick={() => Changeblue()}
+                            onClick={Changeblue}
                             // تابع Changered برای تصویر بعدی
                             className="theme mx-1"
                             src={url.src3}
